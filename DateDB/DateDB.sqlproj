@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{cec0d825-c682-4036-a12b-e9cca8dfb321}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -57,5 +57,19 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="acc" />
+    <Folder Include="Security" />
+    <Folder Include="Security\Schemas" />
+    <Folder Include="acc\Functions" />
+    <Folder Include="acc\Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\Schemas\acc.sql" />
+    <Build Include="acc\Functions\fu_DateInt.sql" />
+    <Build Include="Security\Schemas\tools.sql" />
+    <Build Include="acc\Procedures\pr_Date.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DateDB.publish.xml" />
   </ItemGroup>
 </Project>
